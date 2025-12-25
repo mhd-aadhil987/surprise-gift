@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary 💖</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<div class="main-wrapper">
+
+    <div class="initial-message">
+        <h1>Happy 1st Anniversary 💖</h1>
+        <div class="divider"></div>
+        <p>Wishing you both a lifetime filled with love, laughter, and unforgettable moments.</p>
+        <p>May your bond grow stronger and more beautiful with every year ✨</p>
+    </div>
+
+    <div class="gift-container" id="giftBox" onclick="openGift()">
+
+        <div class="gift-lid">
+            <div class="bow">
+                <div class="bow-center"></div>
+            </div>
+        </div>
+
+        <div class="gift-box">
+            <div class="ribbon-v"></div>
+            <div class="ribbon-h"></div>
+        </div>
+
+        <div class="photo-container">
+            <img src="sumai.jpg" class="photo-reveal" alt="Anniversary Photo">
+        </div>
+
+        <div class="click-text">👆 Click to Open 👆</div>
+
+    </div>
+</div>
+
+<script>
+function createParticles(){
+    const p=document.getElementById("particles");
+    for(let i=0;i<30;i++){
+        const d=document.createElement("div");
+        d.className="particle";
+        d.style.left=Math.random()*100+"vw";
+        d.style.animationDelay=Math.random()*8+"s";
+        p.appendChild(d);
+    }
+}
+
+let opened=false;
+function openGift(){
+    if(opened) return;
+    opened=true;
+    document.getElementById("giftBox").classList.add("opened");
+}
+
+createParticles();
+</script>
+
+</body>
+</html>
